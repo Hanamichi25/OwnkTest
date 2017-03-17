@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" ng-app="myapp">
+<head>
+	<title>Agregar Proveedor</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet"
+		href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script
+		src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script data-require="angular.js@*" data-semver="1.3.0-beta.14" src="http://code.angularjs.org/1.3.0-beta.14/angular.js"></script>
+    <script data-require="angular-animate@*" data-semver="1.3.0-beta.14" src="http://code.angularjs.org/1.3.0-beta.14/angular-animate.js"></script>
+
+    <link href="#" th:href="@{/css/style.css}" rel="stylesheet" />
+</head>
+<body ng-controller="control">
+
+	<div class="jumbotron">
+		<div class="container">
+			<h1>Crear Proveedor</h1>
+			<br/>
+			<form action="#" th:action="@{/proveedor/addproveedor}" th:object="${proveedorModel}" method="post">
+				
+				Nit <input type="text" class="form-control" th:field="*{nit}" th:value="${nit}"></input>
+				<br/>
+				Nombres <input type="text" class="form-control" th:field="*{nombres}" th:value="${nombres}"></input>
+				<br/>
+				Apellidos <input type="text" class="form-control" th:field="*{apellidos}" th:value="${apellidos}"></input>
+				<br/>
+				<br/>
+				<button class="btn btn-lg btn-primary btn-block" type="submit">
+					<span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Accept
+				</button>
+				
+			</form>
+			<a href="#" th:href="@{/proveedor/cancel}">
+			<button class="btn btn-lg btn-primary btn-block" type="submit">
+					<span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Accept
+		    </button>
+		    </a>
+		</div>
+	</div>
+
+</body>
+</html>
